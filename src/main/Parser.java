@@ -15,14 +15,29 @@ public class Parser {
         return sc.hasNext();
     }
 
-    public void advance(){
+    public void advance() {
         String val = sc.nextLine().trim();
 
-        while (val == null || val.contains("//") || val.equals("")){
-            val = sc.nextLine().trim();
+        while (sc.hasNext()){
+            if(val != null){
+                if(!val.equals("")){
+                    if(val.charAt(0) == '/'){
+                        val = sc.nextLine().trim();
+                    } else {
+                        break;
+                    }
+                } else {
+                    val = sc.nextLine().trim();
+                }
+            } else{
+                val = sc.nextLine().trim();
+            }
         }
-
-        command = val;
+        if(val.contains(" ")){
+            command = val.substring(0,val.indexOf(" "));
+        } else {
+            command = val;
+        }
     }
 
     public String commandType(){

@@ -74,7 +74,7 @@ public class Code {
             case "M-1" :
                 return "1110010";
             case "D+M" :
-                return "1110111";
+                return "1000010";
             case "D-M" :
                 return "1010011";
             case "M-D" :
