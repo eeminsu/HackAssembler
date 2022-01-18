@@ -34,7 +34,9 @@ public class Parser {
             }
         }
         if(val.contains(" ")){
-            command = val.substring(0,val.indexOf(" "));
+            command = val.substring(0, val.indexOf(" "));
+        } else if(val.contains("/")){
+            command = val.substring(0, val.indexOf("/"));
         } else {
             command = val;
         }
